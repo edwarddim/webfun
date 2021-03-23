@@ -1,0 +1,32 @@
+/* 
+selector{
+    attribute : property;
+}
+
+*/
+/* CSS RESETTER */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: auto;
+}
+
+#greeting{
+    color: aquamarine;
+    font-family: Helvetica, sans-serif;
+    background-color: black;
+}
+
+.subheader{
+    color: brown;
+    background-color: yellow;
+    border: 5px solid black;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 120px;
+}
