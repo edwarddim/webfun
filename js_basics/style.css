@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 970px;
+    min-height: 500px;
+    background-color: brown;
+    padding: 10px;
+}
+#header{
+    background-color: maroon;
+    padding: 10px;
+}
+#navbar{
+    width: 100px;
+    height: 200px;
+    background-color: teal;
+    display: inline-block;
+    vertical-align: top;
+}
+#main_content{
+    width: 800px;
+    min-height: 400px;
+    background-color: navy;
+    display: inline-block;
+}
+#footer{
+    min-height: 100px;
+    background-color: purple;
+}
+#navbar ul{
+    margin-left: 10px;
+}
+#navbar ul li{
+    color:red;
+}
+span{
+    color: purple;
+}
