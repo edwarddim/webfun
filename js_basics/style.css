@@ -13,18 +13,20 @@
     background-color: maroon;
     padding: 10px;
 }
+#main_body{
+    display:flex;
+    justify-content: space-between;
+}
 #navbar{
     width: 100px;
     height: 200px;
     background-color: teal;
-    display: inline-block;
     vertical-align: top;
 }
 #main_content{
     width: 800px;
     min-height: 400px;
     background-color: navy;
-    display: inline-block;
 }
 #footer{
     min-height: 100px;

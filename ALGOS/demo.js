@@ -51,3 +51,26 @@ else{
 
 4 == "4" // true
 4 === "4" // false
+
+
+// DRY - DON'T REPEAT YOURSELF
+// LOOPS
+
+
+for(var i = 50; i >= 0; i--){
+    console.log("hello")
+    console.log(i)
+}
+
+var i = 50
+while(i >= 0 ){
+    console.log("hello")
+    console.log(i)
+    i--
+}
+
+var dice_roll = Math.floor(Math.random() * Math.floor(6))
+while(dice_roll != 3){
+    console.log("You rolled " + dice_roll)
+    dice_roll = Math.floor(Math.random() * Math.floor(6))
+}
