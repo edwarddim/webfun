@@ -1,76 +1,100 @@
-// algorithims => using code to solve a problem
+// // algorithims => using code to solve a problem
 
-// VARIABLES & DATA TYPES
-// DECLARE VARIABLES
-var fullName
-// INITIALIZING VARIABLES
-fullName = "Edward Im"
+// // VARIABLES & DATA TYPES
+// // DECLARE VARIABLES
+// var fullName
+// // INITIALIZING VARIABLES
+// fullName = "Edward Im"
 
-var full_name = "Ed Im"
+// var full_name = "Ed Im"
 
-var age = 30
-var double = 2.22
-var float = 3.333333
-var check = true 
-var something = false
+// var age = 30
+// var double = 2.22
+// var float = 3.333333
+// var check = true 
+// var something = false
 
-// MATH OPERATIONS
-var answer = 2 + 2
-answer = 4 - 2
-answer = 4 * 2
-answer = 4 / 2 //division
+// // MATH OPERATIONS
+// var answer = 2 + 2
+// answer = 4 - 2
+// answer = 4 * 2
+// answer = 4 / 2 //division
 
-answer = 3 % 4 // modulus
+// answer = 3 % 4 // modulus
 
-// CONDITIONALS - COMPARE TO DATA TYPES
-// == , < , <= , >, >=, !=
+// // CONDITIONALS - COMPARE TO DATA TYPES
+// // == , < , <= , >, >=, !=
 
-if( 2 < 5 ){
-    console.log("INDEED 2 IS LESS THAN 5")
-}
-
-
-var number = 4
-
-if(number < 3){
-    console.log("NUM IS LESS THAN 3")
-}
-else if(number === 4){
-    console.log("NUM IS 4")
-}
-else if(number === "edward"){
-    console.log("NUM IS EDWARD")
-}
-else if(number %2 == 0){
-    console.log("NUM IS EVEN")
-}
-else{
-    console.log("NUM IS GREATER THAN 4")
-}
+// if( 2 < 5 ){
+//     console.log("INDEED 2 IS LESS THAN 5")
+// }
 
 
-4 == "4" // true
-4 === "4" // false
+// var number = 4
+
+// if(number < 3){
+//     console.log("NUM IS LESS THAN 3")
+// }
+// else if(number === 4){
+//     console.log("NUM IS 4")
+// }
+// else if(number === "edward"){
+//     console.log("NUM IS EDWARD")
+// }
+// else if(number %2 == 0){
+//     console.log("NUM IS EVEN")
+// }
+// else{
+//     console.log("NUM IS GREATER THAN 4")
+// }
 
 
-// DRY - DON'T REPEAT YOURSELF
-// LOOPS
+// 4 == "4" // true
+// 4 === "4" // false
 
 
-for(var i = 50; i >= 0; i--){
-    console.log("hello")
-    console.log(i)
-}
+// // DRY - DON'T REPEAT YOURSELF
+// // LOOPS
 
-var i = 50
-while(i >= 0 ){
-    console.log("hello")
-    console.log(i)
-    i--
-}
 
-var dice_roll = Math.floor(Math.random() * Math.floor(6))
-while(dice_roll != 3){
-    console.log("You rolled " + dice_roll)
-    dice_roll = Math.floor(Math.random() * Math.floor(6))
+// for(var i = 50; i >= 0; i--){
+//     console.log("hello")
+//     console.log(i)
+// }
+
+// var i = 50
+// while(i >= 0 ){
+//     console.log("hello")
+//     console.log(i)
+//     i--
+// }
+
+// var dice_roll = Math.floor(Math.random() * Math.floor(6))
+// while(dice_roll != 3){
+//     console.log("You rolled " + dice_roll)
+//     dice_roll = Math.floor(Math.random() * Math.floor(6))
+// }
+
+
+
+
+
+
+
+
+// ARRAYS - ORDERED DATA STRUCTURE
+
+var array = [5, 3, 1, 7, 9]
+console.log("BEFORE PUSH", array)
+array.push(13)
+array.push(21)
+array.push(25)
+console.log("AFTER PUSH", array)
+array.pop()
+array.push(56)
+console.log("AFTER POP", array)
+console.log("THE LENGTH OF THE ARRAY: ", array.length)
+ 
+for(var i =0 ; i < array.length; i++){
+    console.log(array[i])
 }

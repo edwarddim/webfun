@@ -42,3 +42,10 @@ Output:
 I should bring: sunglasses, a coat, and a smile!
 
 */
+// ///Thursday /////
+// QUESTION 1
+for(var i=0; i<10; i++) {     
+  console.log(i);             
+  /  i = i + 3; 
+  } 
+  

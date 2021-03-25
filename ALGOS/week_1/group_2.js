@@ -30,9 +30,9 @@ if(isRaining) {
 }
 whatToBring += "and a smile!";
     
-console.log(whatToBring);
+console.log(whatToBring); 
 ```
-OUTPUT:
+/OUTPUT:
 PUT YOUR PREDICTIONS HERE
 
 ```//sunglasses and a smile
