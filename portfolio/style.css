@@ -1,16 +1,23 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 1px dotted red;
 }
 
+.grey_gradient{
+    background: linear-gradient(white, grey, white);
+}
+
+.silver_bg{
+    background-color: darkturquoise;
+}
 
 #container{
     width:970px;
     min-height: 400px;
-    background-color: silver;
+    background-color: purple;
     margin: auto;
 }
+
 #header{
     display:flex;
     justify-content: space-between;
@@ -23,7 +30,76 @@
     padding: 10px;
 }
 
+/* GRABS h1 THAT ARE DIRECT CHILDREN OF #about_me */
+#about_me > h1{
+    margin-bottom: 10px;
+    padding:5px;
+}
+
+/* GRABBING ALL P TAGS REGARDLESS OF HOW NESTED IT IS */
+#about_me p{
+    margin-bottom: 10px;
+    padding:5px;
+}
+#about_me{
+    width:510px;
+}
 #intro img{
-    width: 300px;
+    width: 390px;
     border: 5px solid grey;
+}
+
+#main_body{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card{
+    width:300px;
+}
+
+.card_top{
+    height: 450px;
+}
+
+.card_top > p,
+.card_top > h1{
+    padding:10px;
+}
+.card_top > img{
+    width: 100%;
+}
+
+.card_bottom button{
+    margin-left: 115px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.card_bottom img{
+    width: 55px;
+}
+
+#footer{
+    background-color: ivory;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer ul{
+    display:flex;
+    justify-content: center;
+}
+
+#footer ul li{
+    list-style-type: none;
+    margin-left:5px;
 }
