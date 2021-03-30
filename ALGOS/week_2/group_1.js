@@ -19,6 +19,17 @@ function concatArrays(arr1, arr2){
     return expected;
 }
 
+function concatArr(arr1, arr2) {
+  expected = [];
+  for (var i=0; i<arr1.length; i++){
+    expected[i]=arr1[i];
+  }
+  for (var i=0; i<arr2.length; i++){
+    expected[i+arr1.lenghth]=arr2[i];
+  }
+  return expected;
+}
+
 
 
 
@@ -101,7 +112,13 @@ const arr4 = [];
 const expected4 = [];
 
 function reverseArr(items) {
-  // code here
+  var x;
+    for()var i=0; i<(Math.ceil(items.length/2)-1); i++ {}
+      x = items[i];
+      items[i] = items[items.length-i-1];
+      items[items.length-i-1] = x;
+    
+    return items;
 }
 
 /* 
@@ -143,10 +160,19 @@ const endIdx6 = 1;
 const expected6 = [];
 
 function slice(items, startIdx, endIdx) {
-  // code here
+  if ((startIdx > items.length) || (endIdx > items.length-1)) {
+    return items;
+  } 
+  else {
+    var newArr = [];
+    var j =0;
+    for (var i=startIdx; i< endIdx; i++) {
+      newArr[j] = items[i];
+      j++
+    }
+  return newArr;
+  }
 }
-
-
 
 /*****************************************************************************/
 /* 

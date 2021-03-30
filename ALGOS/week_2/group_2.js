@@ -78,9 +78,20 @@ const expected3 = ["a"];
 const arr4 = [];
 const expected4 = [];
 
-function reverseArr(items) {
-  // code here
+function reverseArr(items) { 
+  var temp = 0
+  for (var i = 0; i < items.length/2 ;i++){
+    temp = items[i]
+    items[i] = items[items.length-i-1]
+    items[items.length-i-1] = temp
+  }
+  return items
 }
+
+console.log (reverseArr(arr1))
+console.log (reverseArr(arr2))
+console.log (reverseArr(arr3))
+console.log (reverseArr(arr4))
 
 /* 
   Recreate the built in .slice method
@@ -120,11 +131,28 @@ const startIdx6 = 1;
 const endIdx6 = 1;
 const expected6 = [];
 
-function slice(items, startIdx, endIdx) {
-  // code here
+//extra conditions, should take out of bounds indexes and make them the closest inbound index
+
+function sliceArray(items, startIdx, endIdx) {
+  if(items.length < endIdx){
+    endIdx = items.length
+  }
+  if(startIdx < 0){
+    startIdx = 0
+  }
+  var sliceArray= []
+  for(var i = startIdx; i < endIdx; i++){
+    sliceArray.push(items[i])
+  }
+  return sliceArray
 }
 
-
+console.log(sliceArray(arr1,startIdx1,endIdx1))
+console.log(sliceArray(arr2,startIdx2,endIdx2))
+console.log(sliceArray(arr3,startIdx3,endIdx3))
+console.log(sliceArray(arr4,startIdx4,endIdx4))
+console.log(sliceArray(arr5,startIdx5,endIdx5))
+console.log(sliceArray(arr6,startIdx6,endIdx6))
 
 /*****************************************************************************/
 /* 
