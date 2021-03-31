@@ -33,6 +33,17 @@ $(document).ready(function(){
         console.log(full_name)
     })
 
+    $("#fade_out > button").click(function(){
+        console.log("fade button clicked")
+    })
+
+    // GETTER
+    var cat_address = $("img").attr("src")
+    console.log(cat_address)
+
+    var ninja_address = $("img").attr("alt-src")
+    console.log(ninja_address)
+
 
 
 })

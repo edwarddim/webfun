@@ -4,6 +4,16 @@
     background-color: blue;
 }
 
+.dark_mode{
+    background-color: black;
+    color: white;
+}
+
+.lite_mode{
+    background-color: white;
+    color:black;
+}
+
 /* #title, #toggle_h1{
     display: none;
 } */
