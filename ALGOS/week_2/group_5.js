@@ -185,14 +185,27 @@ function slice(items, startIdx, endIdx) {
 const arr1 = [1, 2, 3];
 const newItem1 = 0;
 const expected1 = 4;
+arr1Expected = [];
 // after function is called, arr1 should be:
-const arr1Expected = [0, 1, 2, 3];
+// const arr1Expected = [0, 1, 2, 3];
+function shifting(arr1, val){
+  arr1Expected[0]=val;
+  for(i = 0; i < arr1.length; i++){
+    arr1Expected.push(arr1[i]);
+  }
+  console.log(arr1Expected)
+  return arr1Expected;
+}
+shifting([1,2,3], 0)
+
 
 const arr2 = [];
 const newItem2 = "a";
 const expected2 = 1;
 // after function is called, arr2 should be:
-const arr2Expected = ["a"];
+arr2Expected =shifting([],"a");
+arr2Expected.push(newItem2)
+console.log(arr2Expected)
 
 /**
  * Shifts all items to the right by one to make space to add the given new item
@@ -217,6 +230,30 @@ const arr1 = [1, 2, 3];
 const expected1 = 1;
 // after running function arr1 should now be:
 const arr1Expected = [2, 3];
+function removeNum(arr1){
+  expected = arr1[0];
+  var tempArr = [];
+  for (var i=1; i<arr1.length; i++){
+    tempArr[i-1]=arr[i];
+  }
+  console.log(tempArr);
+  return tempArr;
+}
+
+removeNum([1,2,3]);
+
+//---
+function removeNum(arr1){
+expected = arr1[0];
+var tempArr = [];
+for (var i=1; i<arr1.length; i++){
+  tempArr[i-1]=arr.[i];
+}
+return tempArr;
+}
+
+
+
 
 const arr2 = ["a", "b", "c", "d"];
 const expected2 = "a";

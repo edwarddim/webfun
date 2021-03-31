@@ -32,7 +32,7 @@ function concatArr(arr1, arr2) {
 
 
 
-
++
 
 
 /* 
@@ -203,9 +203,15 @@ const arr2Expected = ["a"];
  * @param {any} newItem To add to front.
  * @returns {number} The new length of items.
  */
-function unshift(items, newItem) {
-  // code here
+function unshift(items,newItem) {
+  for(var i=arr.length-1; i>0; i--){
+    arr[i+1]=arr[i];
+  }
+  arr[0]=num;
+  return arr.length;
 }
+console.log(unshift(arr1,newItem1));
+console.log(unshift(arr2,newItem2));
 
 /* 
   Given an array, remove and
@@ -232,8 +238,16 @@ const arr2Expected = ["b", "c", "d"];
  * @returns {any} The removed value previously at idx 0.
  */
 function shift(items) {
-  // code here
+  var value=items[0];
+  for(var i=0; i<items.length; i++){
+    items[i]=items[i+1];
+  }
+  items.pop();
+  console.log(items);
+  return value;
 }
+console.log(shift(arr1));
+console.log(shift(arr2));
 
 /*****************************************************************************/
 /* 

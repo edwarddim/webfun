@@ -184,7 +184,7 @@ const arr2Expected = ["a"];
  * @returns {number} The new length of items.
  */
 function unshift(items, newItem) {
-  // code here
+  
 }
 
 /* 
@@ -212,7 +212,7 @@ const arr2Expected = ["b", "c", "d"];
  * @returns {any} The removed value previously at idx 0.
  */
 function shift(items) {
-  // code here
+  
 }
 
 /*****************************************************************************/

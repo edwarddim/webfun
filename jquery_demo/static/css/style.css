@@ -1,0 +1,9 @@
+#container{
+    width: 500px;
+    min-height: 500px;
+    background-color: blue;
+}
+
+/* #title, #toggle_h1{
+    display: none;
+} */

@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     var title = document.getElementById("title")
-    
     title.addEventListener("click", function(){
         console.log("THE H1 WAS CLICKED")
     })

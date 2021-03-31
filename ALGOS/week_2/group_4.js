@@ -156,8 +156,10 @@ function slice(items, startIdx, endIdx) {
     }
     if(endIdx> items.length){
         endIdx= items.length-1;
-    }
+ 
+   }
     for(var i= startIdx;i<endIdx;i++){
+
         expected.push(items[i]);
     }
     return expected;

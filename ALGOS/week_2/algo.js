@@ -268,7 +268,12 @@ const arr2Expected = ["a"];
  * @returns {number} The new length of items.
  */
 function unshift(items, newItem) {
-  // code here
+  // ITERATING THROUGH THE ARRAY BACKWARDS
+  for(var i = items.length - 1; i >= 0; i--){
+    items[i+1] = items[i]
+  }
+  items[0] = newItem
+  return items.length
 }
 
 /* 
@@ -296,7 +301,13 @@ const arr2Expected = ["b", "c", "d"];
  * @returns {any} The removed value previously at idx 0.
  */
 function shift(items) {
-  // code here
+  var temp = items[0]
+  for(var i = 1; i < items.length; i++){
+    items[i-1] = items[i]
+  }
+
+  items.length = items.length - 1
+  return temp
 }
 
 /*****************************************************************************/

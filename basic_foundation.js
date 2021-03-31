@@ -12,16 +12,16 @@ function evenSum1000(){
     }
     console.log("THE SUM IS: ", sum)
 }
-// function evenSum1000(){
-//     // NEED A VARIABLE TO KEEP OF SUM
-//     var sum = 0
-//     // LOOP FROM 1 TO 1000 AND GRAB ALL THE EVEN NUMBERS
-//     for(var i = 0; i < 1001;i+=2){
-//         sum = sum + i
-//         // sum += i
-//     }
-//     console.log("THE SUM IS: ", sum)
-// }
+function evenSum1000(){
+    // NEED A VARIABLE TO KEEP OF SUM
+    var sum = 0
+    // LOOP FROM 1 TO 1000 AND GRAB ALL THE EVEN NUMBERS
+    for(var i = 0; i < 1001;i+=2){
+        sum = sum + i
+        // sum += i
+    }
+    console.log("THE SUM IS: ", sum)
+}
 evenSum1000()
 
 // Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y. 
