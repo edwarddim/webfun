@@ -6,7 +6,15 @@ const expected1 = [3, 2, 1];
 const arr2 = ["a", "b"];
 const expected2 = ["b", "a"];
 
-const arr3 = ["a"];
+function removeAt(items, idx) {
+if (idx<0 || idx>items.length-1) {
+	return null}
+	var val=items[idx]
+	for (var i=idx; i<item.lenght; i++){
+		items[i]=items[i-1]
+	}
+	return val;const arr3 = ["a"];
+}
 const expected3 = ["a"];
 
 const arr4 = [];
@@ -336,7 +344,17 @@ const expected3 = null;
 const arr3Expected = ["a", "b", "c"];
 
 function removeAt(items, idx) {
-  // code here
+  if( idx < 0 || idx >= items.length){
+    return null
+  }
+  var removed_value = items[idx]
+
+  for(var i = idx; i < items.length - 1; i++){
+    arr[i] = arr[i+1]
+  }
+  // items.length = items.length - 1
+  items.pop()
+  return removed_value
 }
 
 /* 
@@ -355,56 +373,26 @@ const expected2 = [1, 5, 2, 9];
 const nums3 = [5, 1, 0, 2, 3, 0];
 const expected3 = [0, 5, 1, 2, 3, 0];
 
-/**
- * Moves the smallest number in the given array to the front.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Array<number>} nums
- * @returns {Array<number>} The given arr after the min has been moved to front.
- */
 function minToFront(nums) {
-  // code here
+  // FIND THE MINIMUM NUMBER AND THE INDEX OF THE MINUMIUM NUMBER
+  var minIdx = 0
+  var minVal = nums[0]
+  for(var i = 0; i < nums.length; i++){
+    if(nums[i] < minVal){
+      minVal = nums[i]
+      minIdx = i
+    }
+  }
+  // SLIDE OVER VALUES FROM FRONT TO WHERE THE MIN INDEXD IS
+  for( var i = minIdx; i >= 1; i--){
+    nums[i] = nums[i-1]
+  }
+  nums[0] = minVal
+  return nums
 }
 
 /*****************************************************************************/
-/* 
-  Array: Second-Largest
-  Return the second-largest element of an array, or null if there is none.
-  Bonus: do it with one loop and no nested loops
-*/
 
-// 2nd largest is 2nd
-const nums1 = [2, 3, 1, 4];
-const expected1 = 3;
-
-// largest is first
-const nums2 = [4, 1, 3, 2];
-const expected2 = 3;
-
-// largest duplicated first
-const nums3 = [4, 4, 4, 1, 3, 2];
-const expected3 = 3;
-
-// 2nd largest is first
-const nums4 = [3, 1, 4, 2];
-const expected4 = 3;
-
-// largest is 2nd
-const nums5 = [3, 4, 2, 1];
-const expected5 = 3;
-
-const nums6 = [3, 3];
-const expected6 = null;
-
-const nums7 = [2];
-const expected7 = null;
-
-const nums8 = [];
-const expected8 = null;
-
-function secondLargest(nums) {
-  // code here
-}
 
 /*
   Input: a 2 dimensional array of integers

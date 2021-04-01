@@ -298,8 +298,19 @@ const expected3 = null;
 const arr3Expected = ["a", "b", "c"];
 
 function removeAt(items, idx) {
-  // code here
+  var wanted = items[idx];
+  if(idx<0 || idx>items.length-1){
+    return null;
+  }
+  for(var i=idx; i<items.length;i++){
+    items[i]=items[i+1];
+  }
+  //console.log(items);
+  items.pop();
+  // arr.length = arr.length-1;
+  return wanted;
 }
+console.log(removeAt(["a", "b", "c", "d", "e"],1));
 
 /* 
   Given an array, move the minimum value to the front in-place
@@ -325,8 +336,23 @@ const expected3 = [0, 5, 1, 2, 3, 0];
  * @returns {Array<number>} The given arr after the min has been moved to front.
  */
 function minToFront(nums) {
-  // code here
+  // store the minnum value
+  var min= nums[0];
+  nums.length= nums.length+1;
+  for(var i=nums.length-1; i>=0;i--){
+    if(nums[i]<min){
+      min=nums[i];
+    }
+    nums[i]=nums[i-1];
+  }
+  nums[0]=min;
+  // console.log(nums)
+  return nums;
+  //put min at index 0
+  //iterates array to be the same past first value
 }
+minToFront([5, 1, 0, 2, 3, 0]);
+
 
 /*****************************************************************************/
 /* 
@@ -515,6 +541,7 @@ const arr1 = ["a", "b", "c", "d", "e"];
 const startIdx1 = 0;
 const endIdx1 = 5;
 const expected1 = ["a", "b", "c", "d", "e"];
+
 
 const arr2 = ["a", "b", "c", "d", "e"];
 const startIdx2 = 0;

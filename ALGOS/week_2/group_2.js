@@ -241,8 +241,23 @@ const expected3 = null;
 const arr3Expected = ["a", "b", "c"];
 
 function removeAt(items, idx) {
-  // code here
+  if (idx < items.length && idx >= 0){
+    let idxVal = items[idx]
+    for (let i = idx; i < items.length; i++){
+      items[i] = items[i+1]
+    }
+    items.pop()
+    console.log(items)
+    return idxVal
+  }
+  else{
+    return null
+  }
 }
+console.log(removeAt(arr1, iremoveIdx1))
+console.log(removeAt(arr2, iremoveIdx2))
+console.log(removeAt(arr3, iremoveIdx3))
+
 
 /* 
   Given an array, move the minimum value to the front in-place
@@ -267,9 +282,26 @@ const expected3 = [0, 5, 1, 2, 3, 0];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given arr after the min has been moved to front.
  */
-function minToFront(nums) {
-  // code here
+ function minToFront(nums) {
+  var smallestIndex = 0
+  for(let i = 0; i < nums.length;i++){      //standard loop
+    if(nums[i] < nums[smallestIndex]){      // check if value at current index is smaller than stored index
+      smallestIndex = i                     //store new index if so
+    }
+  }
+  var smallestNumber = nums[smallestIndex]  //save the value at smallestIndex (will be overwritten)
+  for(let j=smallestIndex; j > 0 ;j--){     //iterate through array, starting at smallestIndex (to be overwritten)
+    nums[j]= nums[j-1]                      //overwrite current index with earlier index to bump list forward
+  }
+  nums[0] = smallestNumber                  //set lowest index to lowest number
+  return nums                               //return array
 }
+
+console.log(minToFront(nums1))
+console.log(minToFront(nums2))
+console.log(minToFront(nums3))
+
+
 
 /*****************************************************************************/
 /* 
