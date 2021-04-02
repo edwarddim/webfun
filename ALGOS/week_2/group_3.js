@@ -28,15 +28,15 @@ const arr2Expected = ["a"];
  */
 
 function unshift(items, newItem) {
-  var newArr=[newItem];
-  for(var i=0;i<items.length;i++){
+  var newArr = [newItem];
+  for (var i = 0; i < items.length; i++) {
     newArr.push(items[i]);
   }
-  items=newArr;
+  items = newArr;
   console.log(items);
   return items.length;
 }
-console.log(unshift([1,2,3],0));
+console.log(unshift([1, 2, 3], 0));
 
 /* 
   Given an array, remove and
@@ -64,25 +64,25 @@ const arr2Expected = ["b", "c", "d"];
  */
 
 function shift(items) {
-  var newArr=[];
-  var firstValueItems=items[0];
-  for(var i=1;i<items.length;i++){
+  var newArr = [];
+  var firstValueItems = items[0];
+  for (var i = 1; i < items.length; i++) {
     newArr.push(items[i]);
   }
-  items=newArr;
+  items = newArr;
   console.log(items);
-  return firstValueItems;  
+  return firstValueItems;
 }
-console.log(shift([1,2,3]));
+console.log(shift([1, 2, 3]));
 
 // **************
 
 Given an array and an index,
-remove the item at that index.
+  remove the item at that index.
 return the removed item
 
-No built-in array methods except pop().
-*/
+No built -in array methods except pop().
+* /
 
 const arr1 = ["a", "b", "c", "d", "e"];
 const removeIdx1 = 1;
@@ -101,20 +101,20 @@ const expected3 = null;
 const arr3Expected = ["a", "b", "c"];
 
 function removeAt(items, idx) {
-  if (idx >= items.length - 1 || idx < 0 ){
+  if (idx >= items.length - 1 || idx < 0) {
     return null
   }
   var removedNum = items[idx]
-  for (var i = idx; i < items.length; i++){
-    items[i] = items[i+1]
+  for (var i = idx; i < items.length; i++) {
+    items[i] = items[i + 1]
   }
   items.pop()
   // console.log(items)
   return removedNum
 }
-console.log(removeAt( ["a", "b", "c", "d", "e"], 1)) //b
-console.log(removeAt( ["a", "b", "c", "d", "e"], -3)) //null
-console.log(removeAt( ["a", "b", "c"], 3)) //null
+console.log(removeAt(["a", "b", "c", "d", "e"], 1)) //b
+console.log(removeAt(["a", "b", "c", "d", "e"], -3)) //null
+console.log(removeAt(["a", "b", "c"], 3)) //null
 
 /* 
 Given an array, move the minimum value to the front in-place
@@ -136,18 +136,71 @@ function minToFront(nums) {
   var minVal = nums[0]
   var temp = null
   // find the min value
-  for (var i = 1; i < nums.length; i++){
-    if (nums[i] < minVal){
+  for (var i = 1; i < nums.length; i++) {
+    if (nums[i] < minVal) {
       minVal = nums[i]
     }
   }
-  for (var j = nums.length - 1; j > 0; j--){
-    if (nums[j] == minVal){
+  for (var j = nums.length - 1; j > 0; j--) {
+    if (nums[j] == minVal) {
       temp = nums[j]
-      nums[j] = nums[j-1]
-      nums[j-1] = temp
+      nums[j] = nums[j - 1]
+      nums[j - 1] = temp
     }
   }
   return nums
 }
 console.log(minToFront([6, 4, 5, 1, 3, 2]))
+
+/*****************************************************************************/
+
+
+/*
+  Input: a 2 dimensional array of integers
+  Output: A 1 dimensional array of all the same elements preserving original order
+
+  CHALLENGE: THE ARRAY MAY CONTAIN ARRAYS OR NUMBERS
+  FIND BUILT IN FUNCTION THAT CHECKS IF AN ELEMENT IS AN ARRAY
+*/
+
+var challengeArr = [1, 3, 4, [5, 6], 7, 8, [9]]
+var challengeResult = [1, 3, 4, 5, 6, 7, 8, 9]
+
+// this given array has a length of 3 because it has 3 arrays as items
+const twoDimArr1 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+const expected1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const twoDimArr2 = [[1], [2], [3]];
+const expected2 = [1, 2, 3];
+
+const twoDimArr3 = [[], [], [10, 20]];
+const expected3 = [10, 20];
+
+function flatten2dArray(twoDimArr) {
+  var resultArray = []
+  for (var i = 0; i < twoDimArr.length; i++) {
+    for (var j = 0; j < twoDimArr[i].length; j++) {
+      resultArray.push(twoDimArr[i][j])
+    }
+  }
+  return resultArray
+}
+
+console.log(flatten2dArray(twoDimArr1))
+console.log(flatten2dArray(twoDimArr2))
+console.log(flatten2dArray(twoDimArr3))
+
+
+//challenge
+function flatten2dArrayAndFriends(twoDimArr) {
+  var resultArray = [].concat.apply([], twoDimArr)
+  return resultArray
+}
+
+console.log(flatten2dArrayAndFriends(challengeArr))
+
+/*****************************************************************************/

@@ -7,13 +7,14 @@ const arr2 = ["a", "b"];
 const expected2 = ["b", "a"];
 
 function removeAt(items, idx) {
-if (idx<0 || idx>items.length-1) {
-	return null}
-	var val=items[idx]
-	for (var i=idx; i<item.lenght; i++){
-		items[i]=items[i-1]
-	}
-	return val;const arr3 = ["a"];
+  if (idx < 0 || idx > items.length - 1) {
+    return null
+  }
+  var val = items[idx]
+  for (var i = idx; i < item.lenght; i++) {
+    items[i] = items[i - 1]
+  }
+  return val; const arr3 = ["a"];
 }
 const expected3 = ["a"];
 
@@ -21,7 +22,7 @@ const arr4 = [];
 const expected4 = [];
 
 function reverseArr(items) {
-// code here
+  // code here
 }
 
 /* 
@@ -63,7 +64,7 @@ const endIdx6 = 1;
 const expected6 = [];
 
 function slice(items, startIdx, endIdx) {
-// code here
+  // code here
 }/* 
   Array: Concat
   .push allowed: arrName.push(newItem)
@@ -146,11 +147,12 @@ const expected3 = -1;
 
 
 
-  
+
 
 /*****************************************************************************/
 /* 
   Given an array, reverse it's items in place
+
   return the array after reversing it
   You can create a new array. HINT: ITERATE THROUGH ORIGINAL ARRAY IN REVERSE
   CHALLENGE: Do it in place without using any built in methods
@@ -172,14 +174,14 @@ function reverseArr(items) {
   // CREATE AN EMPTY ARRAY
   var newArr = []
   // ITERATE THROUGH THE ARRAY IN REVERSE
-  for(var i = items.length - 1; i >=0; i--){
+  for (var i = items.length - 1; i >= 0; i--) {
     // PUSH THE ELEMENTS INTO THE NEW ARRAY
     newArr.push(items[i])
   }
   return newArr
 }
 function reverseArr(items) {
-  for(var i = 0; i < Math.floor(items.length / 2); i++){
+  for (var i = 0; i < Math.floor(items.length / 2); i++) {
     var temp = items[i]
     items[i] = items[items.length - 1 - i]
     items[items.length - 1 - i] = temp
@@ -229,15 +231,15 @@ const expected6 = [];
 function slice(items, startIdx, endIdx) {
   // code here
   // CHECK TO SEE IF THE INDEX MAKE SENSE
-  if(startIdx < 0){
+  if (startIdx < 0) {
     startIdx = 0
   }
-  if(endIdx > items.length){
+  if (endIdx > items.length) {
     endIdx = items.length
   }
   var result = []
   // ITERATE THROUGH ITEMS FROM STARTIDX TO ENDIDX
-  for(var i = startIdx; i < endIdx; i++){
+  for (var i = startIdx; i < endIdx; i++) {
     // PUSH THE NUMBERS TO RESULT
     result.push(items[i])
   }
@@ -277,8 +279,8 @@ const arr2Expected = ["a"];
  */
 function unshift(items, newItem) {
   // ITERATING THROUGH THE ARRAY BACKWARDS
-  for(var i = items.length - 1; i >= 0; i--){
-    items[i+1] = items[i]
+  for (var i = items.length - 1; i >= 0; i--) {
+    items[i + 1] = items[i]
   }
   items[0] = newItem
   return items.length
@@ -310,8 +312,8 @@ const arr2Expected = ["b", "c", "d"];
  */
 function shift(items) {
   var temp = items[0]
-  for(var i = 1; i < items.length; i++){
-    items[i-1] = items[i]
+  for (var i = 1; i < items.length; i++) {
+    items[i - 1] = items[i]
   }
 
   items.length = items.length - 1
@@ -344,13 +346,13 @@ const expected3 = null;
 const arr3Expected = ["a", "b", "c"];
 
 function removeAt(items, idx) {
-  if( idx < 0 || idx >= items.length){
+  if (idx < 0 || idx >= items.length) {
     return null
   }
   var removed_value = items[idx]
 
-  for(var i = idx; i < items.length - 1; i++){
-    arr[i] = arr[i+1]
+  for (var i = idx; i < items.length - 1; i++) {
+    arr[i] = arr[i + 1]
   }
   // items.length = items.length - 1
   items.pop()
@@ -377,15 +379,15 @@ function minToFront(nums) {
   // FIND THE MINIMUM NUMBER AND THE INDEX OF THE MINUMIUM NUMBER
   var minIdx = 0
   var minVal = nums[0]
-  for(var i = 0; i < nums.length; i++){
-    if(nums[i] < minVal){
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] < minVal) {
       minVal = nums[i]
       minIdx = i
     }
   }
   // SLIDE OVER VALUES FROM FRONT TO WHERE THE MIN INDEXD IS
-  for( var i = minIdx; i >= 1; i--){
-    nums[i] = nums[i-1]
+  for (var i = minIdx; i >= 1; i--) {
+    nums[i] = nums[i - 1]
   }
   nums[0] = minVal
   return nums
@@ -397,13 +399,19 @@ function minToFront(nums) {
 /*
   Input: a 2 dimensional array of integers
   Output: A 1 dimensional array of all the same elements preserving original order
+
+  CHALLENGE: THE ARRAY MAY CONTAIN ARRAYS OR NUMBERS
+  FIND BUILT IN FUNCTION THAT CHECKS IF AN ELEMENT IS AN ARRAY
 */
+
+var challengeArr = [1, 3, 4, [5, 6], 7, 8, [9]]
+var challengeResult = [1, 3, 4, 5, 6, 7, 8, 9]
 
 // this given array has a length of 3 because it has 3 arrays as items
 const twoDimArr1 = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
 const expected1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -414,8 +422,36 @@ const twoDimArr3 = [[], [], [10, 20]];
 const expected3 = [10, 20];
 
 function flatten2dArray(twoDimArr) {
-// code here
+  // CREATE A NEW ARR TO PUSH ALL THE NUMBERS TO
+  var newArr = []
+  // ITERATE THROUGH THE TWODIMARR
+  for(var i = 0; i < twoDimArr.length; i++){
+    // ITERATE THROUGH THE ELEMNTS INSIDE OF THE TWODIMARR
+    for(var j =  0; j < twoDimArr[i].length; j++){
+      newArr.push(twoDimArr[i][j])
+    }
+  }
+  return newArr
 }
 
+function flatten2dArray(twoDimArr) {
+  // CREATE A NEW ARR TO PUSH ALL THE NUMBERS TO
+  var newArr = []
+  // ITERATE THROUGH THE TWODIMARR
+  for(var i = 0; i < twoDimArr.length; i++){
+    // ITERATE THROUGH THE ELEMNTS INSIDE OF THE TWODIMARR
+    if(Array.isArray(twoDimArr[i])){
+      for(var j =  0; j < twoDimArr[i].length; j++){
+        newArr.push(twoDimArr[i][j])
+      }
+    }
+    else{
+      newArr.push(twoDimArr[i])
+    }
+  }
+  return newArr
+}
+
+console.log(flatten2dArray(twoDimArr1))
 
 /*****************************************************************************/

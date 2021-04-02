@@ -151,6 +151,7 @@ const expected2 = ["a"];
 const arr3 = ["a", "b", "c", "d", "e"];
 const startIdx3 = 1;
 const endIdx3 = 2;
+
 const expected3 = ["b"];
 
 const arr4 = ["a", "b", "c", "d", "e"];

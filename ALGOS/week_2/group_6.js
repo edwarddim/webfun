@@ -77,6 +77,70 @@ function minToFront(nums) {
 }
 
 
+/*
+  Input: a 2 dimensional array of integers
+  Output: A 1 dimensional array of all the same elements preserving original order
+
+  CHALLENGE: THE ARRAY MAY CONTAIN ARRAYS OR NUMBERS
+  FIND BUILT IN FUNCTION THAT CHECKS IF AN ELEMENT IS AN ARRAY
+*/
+
+var challengeArr = [1,3,4,[5,6],7,8,[9]]
+var challengeResult = [1,3,4,5,6,7,8,9]
+
+// this given array has a length of 3 because it has 3 arrays as items
+const twoDimArr1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+const expected1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const twoDimArr2 = [[1], [2], [3]];
+const expected2 = [1, 2, 3];
+
+const twoDimArr3 = [[], [], [10, 20]];
+const expected3 = [10, 20];
+
+function flatten2dArray(twoDimArr) {
+  var newArr=[];
+  for(i=0;i<twoDimArr.length;i++){
+    for(j=0;j<twoDimArr[i].length;j++){
+      if(twoDimArr[i].length==0){
+        continue
+      }
+      else{
+        newArr.push(twoDimArr[i][j]);
+      }
+    }    
+  }
+  return newArr;
+}
+console.log(flatten2dArray([[], 2, [10, 20]]))
+
+// BELOW FOR CHALLENGE
+
+function flatten2dArray(twoDimArr) {
+  var newArr=[];
+  for(i=0;i<twoDimArr.length;i++){
+    if(Array.isArray(twoDimArr[i])){
+      for(j=0;j<twoDimArr[i].length;j++){
+        if(twoDimArr[i].length==0){
+          continue
+        }
+        else{
+          newArr.push(twoDimArr[i][j]);
+        }
+      }
+    }
+    else{
+      newArr.push(twoDimArr[i]);
+    }
+  }
+  return newArr;
+}
+console.log(flatten2dArray([[], 2, "dog", [10, 20]]))
+
 
 
 
